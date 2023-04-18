@@ -55,7 +55,7 @@ public class C21_Post_TestDataKullanimi extends HerokuAppBaseUrl
         specHerokuApp.pathParam("pp1","booking");
         TestDataHerokuApp testDataHerokuApp=new TestDataHerokuApp();
 
-        JSONObject reqBody=testDataHerokuApp.reqBodJson();
+        JSONObject reqBody=testDataHerokuApp.reqBodyJson();
 
         // 2 - Expected Data hazırla
 
@@ -75,7 +75,7 @@ public class C21_Post_TestDataKullanimi extends HerokuAppBaseUrl
 
         JsonPath resJP = response.jsonPath();
 
-       assertEquals(testDataHerokuApp.basariliStatusCcode,response.getStatusCode());
+       assertEquals(testDataHerokuApp.basariliStatusCode,response.getStatusCode());
        assertEquals(expBody.getJSONObject("booking").get("firstname"),resJP.get("booking.firstname"));
         assertEquals( expBody.getJSONObject("booking").get("lastname")  , resJP.get("booking.lastname") );
         assertEquals( expBody.getJSONObject("booking").get("totalprice")  , resJP.get("booking.totalprice") );
